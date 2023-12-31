@@ -564,7 +564,22 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pylsp = {
+    pylsp = {
+      plugins = {
+        pycodestyle = { enabled = false },
+        autopep8 = { enabled = false },
+        yapf = { enabled = false },
+        pyflakes = { enabled = false },
+        mccabe = { enabled = false },
+        flake8 = { enabled = true },
+        isort = { enabled = true },
+        mypy = { enabled = true },
+        black = { enabled = true },
+        -- other plugins and settings...
+      }
+    }
+  },
   -- rust_analyzer = {},
   rust_analyzer = {
     check = {
