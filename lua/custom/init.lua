@@ -38,3 +38,28 @@ vim.api.nvim_create_autocmd('TermClose', {
   pattern = 'term://*',
   command = 'setlocal number relativenumber',
 })
+
+-- Function to toggle the Fugitive Git buffer
+function Toggle_Git_Buffer()
+  local buffers = vim.api.nvim_list_bufs()
+  local fugitive_bufnr = nil
+
+  for _, bufnr in ipairs(buffers) do
+    local bufname = vim.api.nvim_buf_get_name(bufnr)
+    if bufname:match('^fugitive://.*') then
+      fugitive_bufnr = bufnr
+      break
+    end
+  end
+
+  if fugitive_bufnr then
+    -- If a Fugitive buffer is found, close it
+    vim.api.nvim_buf_delete(fugitive_bufnr, {})
+  else
+    -- If no Fugitive buffer is found, open one
+    vim.cmd('Git')
+  end
+end
+
+-- Mapping ALT+g to toggle the Fugitive buffer
+vim.api.nvim_set_keymap('n', '<A-g>', '<cmd>lua Toggle_Git_Buffer()<CR>', { noremap = true, silent = true })
