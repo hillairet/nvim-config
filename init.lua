@@ -190,11 +190,10 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'hillairet/flexoki-neovim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'flexoki-dark'
     end,
   },
 
@@ -205,7 +204,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'onedark',
+        theme = 'flexoki-dark',
         component_separators = '|',
         section_separators = '',
       },
