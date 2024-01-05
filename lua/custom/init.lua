@@ -4,8 +4,6 @@ vim.cmd.colorscheme 'flexoki-dark'
 -- vim: ts=2 sts=2 sw=2 et
 vim.o.hlsearch = true
 
--- https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- keymapping for terminal
 vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
