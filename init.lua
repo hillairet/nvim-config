@@ -204,7 +204,6 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'flexoki-dark',
         component_separators = '|',
         section_separators = '',
       },
