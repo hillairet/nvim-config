@@ -61,3 +61,17 @@ end
 
 -- Mapping ALT+g to toggle the Fugitive buffer
 vim.api.nvim_set_keymap('n', '<A-g>', '<cmd>lua Toggle_Git_Buffer()<CR>', { noremap = true, silent = true })
+
+-- Function to toggle the diagnostic list
+function ToggleDiagnosticList()
+  -- Check if the location list is open
+  if vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 then
+    -- Close the location list
+    vim.cmd('lclose')
+  else
+    -- Populate the location list with diagnostics and open it
+    vim.diagnostic.setloclist()
+  end
+end
+
+vim.api.nvim_set_keymap('n', '<A-e>', '<cmd>lua ToggleDiagnosticList()<CR>', { noremap = true, silent = true })
