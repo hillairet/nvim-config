@@ -109,6 +109,9 @@ require('lazy').setup({
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+
+      -- Adds buffer completion
+      'hrsh7th/cmp-buffer',
     },
   },
 
@@ -588,7 +591,7 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   marksman = {},
-
+  texlab = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -671,6 +674,7 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'buffer',  keyword_length = 3 },
     { name = 'luasnip' },
     { name = 'path' },
   },
