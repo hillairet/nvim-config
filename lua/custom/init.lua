@@ -75,3 +75,6 @@ function ToggleDiagnosticList()
 end
 
 vim.api.nvim_set_keymap('n', '<A-e>', '<cmd>lua ToggleDiagnosticList()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<A-x>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-x>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })

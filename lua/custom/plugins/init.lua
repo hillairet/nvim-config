@@ -18,4 +18,5 @@ return {
       { '<A-t>', "<cmd>NvimTreeToggle<cr>", desc = "NeoTree" },
     }
   },
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
 }
