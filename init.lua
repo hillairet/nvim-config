@@ -112,6 +112,9 @@ require('lazy').setup({
 
       -- Adds buffer completion
       'hrsh7th/cmp-buffer',
+
+      -- Adds commandline completion
+      'hrsh7th/cmp-cmdline',
     },
   },
 
