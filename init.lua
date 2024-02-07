@@ -608,6 +608,8 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  dockerls = {},
+  docker_compose_language_service = {},
 }
 
 -- Setup neovim lua configuration
