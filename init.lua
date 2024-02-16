@@ -586,6 +586,7 @@ local servers = {
         isort = { enabled = true, profile = "black", line_length = 99, multi_line_output = 3 },
         mypy = { enabled = true },
         black = { enabled = true, line_length = 99, skip_string_normalization = true },
+        ruff = { enabled = false },
         -- other plugins and settings...
       }
     }
