@@ -82,7 +82,6 @@ vim.api.nvim_set_keymap('t', '<A-x>', '<cmd>ToggleTerm<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<A-X>', '<cmd>ToggleTerm direction=vertical<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<A-X>', '<cmd>ToggleTerm direction=vertical<CR>', { noremap = true, silent = true })
 
-
 local cmp = require("cmp")
 
 -- `/` cmdline setup.
@@ -109,3 +108,5 @@ cmp.setup.cmdline(':', {
     }
   })
 })
+
+vim.api.nvim_set_keymap('n', '<A-p>', '<cmd>MarkdownPreviewToggle<CR>', { noremap = true, silent = true })
