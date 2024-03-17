@@ -3,6 +3,8 @@ vim.cmd [[
 autocmd VimEnter * highlight Normal guibg=none
 ]]
 
+require("custom/treesitter-backward-compatibility")
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 vim.o.hlsearch = true
@@ -81,7 +83,8 @@ vim.api.nvim_set_keymap('n', '<A-e>', '<cmd>lua ToggleDiagnosticList()<CR>', { n
 
 vim.api.nvim_set_keymap('n', '<A-x>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<A-x>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<A-X>', '<cmd>ToggleTerm direction=vertical<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<A-X>', '<cmd>ToggleTerm direction=vertical<CR>', { noremap = true, silent = true })
 
 local cmp = require("cmp")
 
@@ -109,3 +112,5 @@ cmp.setup.cmdline(':', {
     }
   })
 })
+
+vim.api.nvim_set_keymap('n', '<A-p>', '<cmd>MarkdownPreviewToggle<CR>', { noremap = true, silent = true })
