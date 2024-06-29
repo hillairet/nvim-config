@@ -196,11 +196,21 @@ require('lazy').setup({
   },
 
   {
-    'hillairet/flexoki-neovim',
+    --   'olimorris/onedarkpro.nvim',
+    'navarasu/onedark.nvim',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'flexoki-dark'
-    end,
+    config = true,
+    opts = {
+      style = 'deep',
+      transparent = true,
+      code_style = {
+        comments = 'italic',
+        keywords = 'italic',
+        functions = 'italic',
+        strings = 'none',
+        variables = 'none',
+      },
+    },
   },
 
   {

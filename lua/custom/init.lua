@@ -1,4 +1,4 @@
-vim.cmd.colorscheme 'flexoki-dark'
+vim.cmd.colorscheme 'onedark'
 vim.cmd [[
 autocmd VimEnter * highlight Normal guibg=none
 ]]
