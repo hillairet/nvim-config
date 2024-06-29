@@ -9,10 +9,12 @@ return {
     -- Switch for controlling whether you want autoformatting.
     --  Use :KickstartFormatToggle to toggle autoformatting on or off
     local format_is_enabled = true
-    vim.api.nvim_create_user_command('KickstartFormatToggle', function()
+    local function formattoggle()
       format_is_enabled = not format_is_enabled
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
-    end, {})
+    end
+    vim.api.nvim_create_user_command('KickstartFormatToggle', formattoggle, {})
+    vim.keymap.set('n', '<A-K>', formattoggle, { desc = 'Toggle autoformatter on/off' })
 
     -- Create an augroup that is used for managing our formatting autocmds.
     --      We need one augroup per client to make sure that multiple clients
