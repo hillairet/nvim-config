@@ -4,6 +4,14 @@
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 
+--  To check the current status of your plugins, run
+--    :Lazy
+--
+--  You can press `?` in this menu for help. Use `:q` to close the window
+--
+--  To update plugins you can run
+--    :Lazy update
+--
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
