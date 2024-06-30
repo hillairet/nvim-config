@@ -41,6 +41,9 @@ I hope you enjoy your Neovim journey,
 -- [[ Setting options ]]
 require 'setting_options'
 
+-- [[ Basic Keymaps ]]
+require 'basic_keymaps'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'install_lazy'
 
