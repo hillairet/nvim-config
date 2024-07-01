@@ -47,7 +47,7 @@ require('lazy').setup({
   -- Useful plugin to show you pending keybinds.
   require 'plugins.keymap_help',
 
-  require 'plugins.gitsigns',
+  require 'plugins.github',
 
   require 'custom.plugins.theme',
 
