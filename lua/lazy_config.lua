@@ -42,10 +42,10 @@ require('lazy').setup({
   },
 
   -- Autocompletion
-  require 'plugins.cmp',
+  require 'plugins.autocompletion',
 
   -- Useful plugin to show you pending keybinds.
-  require 'plugins.which-key',
+  require 'plugins.keymap_help',
 
   require 'plugins.gitsigns',
 
