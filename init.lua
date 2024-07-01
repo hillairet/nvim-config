@@ -53,9 +53,6 @@ require 'lazy_config'
 -- [[ Highlight on yank ]]
 require 'highlight_on_yank'
 
--- [[ Configure Treesitter ]]
-require 'treesitter_config'
-
 -- [[ Configure LSP ]]
 require 'lsp_config'
 
