@@ -37,7 +37,6 @@ require('lazy').setup({
   require 'plugins.keymap_help',
 
   require 'plugins.git',
-  --
 
   require 'custom.plugins.theme',
 
@@ -45,8 +44,7 @@ require('lazy').setup({
 
   require 'plugins.indentation',
 
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  opts = {} },
+  require 'plugins.comments',
 
   require 'plugins.fuzzy_finder',
 
