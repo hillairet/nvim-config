@@ -38,7 +38,7 @@ require('lazy').setup({
 
   require 'plugins.git',
 
-  require 'custom.plugins.theme',
+  require 'plugins.theme',
 
   require 'plugins.status_line',
 
