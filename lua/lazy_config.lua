@@ -60,5 +60,7 @@ require('lazy').setup({
 
   require 'plugins.file_explorer',
 
+  require 'plugins.markdown',
+
   { import = 'custom.plugins' },
 }, {})
