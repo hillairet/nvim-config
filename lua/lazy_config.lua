@@ -58,5 +58,7 @@ require('lazy').setup({
 
   require 'plugins.user_interface',
 
+  require 'plugins.file_explorer',
+
   { import = 'custom.plugins' },
 }, {})
