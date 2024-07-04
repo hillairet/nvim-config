@@ -18,7 +18,6 @@ return {
       { '<A-t>', "<cmd>NvimTreeToggle<cr>", desc = "NeoTree" },
     }
   },
-  { 'akinsho/toggleterm.nvim', version = "*", config = true },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -49,5 +48,8 @@ return {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+    keys = {
+      { '<A-p>', '<cmd>MarkdownPreviewToggle<CR>', desc = "Markdown Preview" },
+    },
   },
 }
