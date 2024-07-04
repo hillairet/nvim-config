@@ -6,9 +6,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set highlight on search
-vim.o.hlsearch = false
-
 -- Make line numbers default
 vim.wo.number = true
 
@@ -42,3 +39,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Set highlight on search
+vim.o.hlsearch = true

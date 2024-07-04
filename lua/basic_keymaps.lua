@@ -11,3 +11,20 @@ vim.keymap.set('n', '<A-D>', vim.diagnostic.goto_prev, { desc = 'Go to previous 
 vim.keymap.set('n', '<A-d>', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Clear highlight by pressing <Esc> in normal mode
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Function to toggle the diagnostic list
+function ToggleDiagnosticList()
+  -- Check if the location list is open
+  if vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 then
+    -- Close the location list
+    vim.cmd('lclose')
+  else
+    -- Populate the location list with diagnostics and open it
+    vim.diagnostic.setloclist()
+  end
+end
+
+vim.api.nvim_set_keymap('n', '<A-e>', '<cmd>lua ToggleDiagnosticList()<CR>', { noremap = true, silent = true })
