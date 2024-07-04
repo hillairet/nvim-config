@@ -62,5 +62,5 @@ require('lazy').setup({
 
   require 'plugins.markdown',
 
-  { import = 'custom.plugins' },
+  require 'plugins.plantuml',
 }, {})
