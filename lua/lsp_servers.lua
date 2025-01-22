@@ -9,9 +9,9 @@ return {
         yapf = { enabled = false },
         pyflakes = { enabled = false },
         mccabe = { enabled = false },
-        flake8 = { enabled = true, ignore = { "E203" }, maxLineLength = 88 },
+        flake8 = { enabled = false, ignore = { "E203" }, maxLineLength = 88 },
         isort = { enabled = true, profile = "black", line_length = 88, multi_line_output = 3 },
-        mypy = { enabled = true },
+        mypy = { enabled = false, follow_imports = true },
         black = { enabled = true, line_length = 88 },
         ruff = { enabled = false },
         -- other plugins and settings...
@@ -38,4 +38,5 @@ return {
   },
   dockerls = {},
   docker_compose_language_service = {},
+  yamlls = {},
 }
