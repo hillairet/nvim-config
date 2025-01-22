@@ -53,5 +53,8 @@ require 'lazy_config'
 -- [[ Highlight on yank ]]
 require 'highlight_on_yank'
 
+-- [[ Install editor tooling ]]
+require 'mason_config'
+
 -- [[ Configure LSP ]]
 require 'lsp_config'
