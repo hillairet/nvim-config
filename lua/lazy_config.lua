@@ -40,6 +40,8 @@ require('lazy').setup({
 
   require 'plugins.linting',
 
+  require 'plugins.formatting',
+
   require 'plugins.autocompletion',
 
   require 'plugins.keymap_help',
