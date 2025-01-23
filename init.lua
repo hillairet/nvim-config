@@ -55,6 +55,3 @@ require 'highlight_on_yank'
 
 -- [[ Install editor tooling ]]
 require 'mason_config'
-
--- [[ Configure LSP ]]
-require 'plugins.language_server_protocol.config'
