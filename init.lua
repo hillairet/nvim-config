@@ -52,6 +52,3 @@ require 'plugin_manager'
 
 -- [[ Highlight on yank ]]
 require 'highlight_on_yank'
-
--- [[ Install editor tooling ]]
-require 'mason_config'
