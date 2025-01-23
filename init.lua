@@ -57,4 +57,4 @@ require 'highlight_on_yank'
 require 'mason_config'
 
 -- [[ Configure LSP ]]
-require 'lsp_config'
+require 'plugins.language_server_protocol.config'

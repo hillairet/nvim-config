@@ -50,7 +50,7 @@ end
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-local servers = require 'lsp_servers'
+local servers = require 'plugins.language_server_protocol.servers'
 
 -- Setup neovim lua configuration
 require('neodev').setup()
