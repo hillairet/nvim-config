@@ -48,7 +48,7 @@ require 'basic_keymaps'
 require 'install_lazy'
 
 -- [[ Configure plugins ]]
-require 'lazy_config'
+require 'plugin_manager'
 
 -- [[ Highlight on yank ]]
 require 'highlight_on_yank'
