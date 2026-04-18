@@ -53,12 +53,8 @@ return function()
   --  define the property 'filetypes' to the map in question.
   local servers = require 'plugins.language_server_protocol.servers'
 
-  -- Setup neovim lua configuration
-  require('neodev').setup()
-
-  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  -- Completion plugin augments LSP capabilities.
+  local capabilities = require('blink.cmp').get_lsp_capabilities()
 
   -- mason-lspconfig requires that these setup functions are called in this order
   require 'plugins.package_manager_config'
