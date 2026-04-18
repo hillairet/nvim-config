@@ -3,9 +3,7 @@ require('mason').setup()
 require('mason-tool-installer').setup({
   -- List all the tools you want to ensure are installed
   ensure_installed = {
-    "flake8",
-    "black",
-    "isort",
+    "ruff",
     "mypy",
   },
   -- Run the installation (if missing) right away when nvim starts

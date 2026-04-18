@@ -20,7 +20,8 @@ return {
         markdown = { "prettier" },
         graphql = { "prettier" },
         lua = { "stylua" },
-        python = { "isort", "black" },
+        -- Ruff handles safe fixes, import organization, and formatting.
+        python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
       },
       format_on_save = function(bufnr)
         -- Only format if auto_format is enabled
