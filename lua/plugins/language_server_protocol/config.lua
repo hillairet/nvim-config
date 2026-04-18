@@ -68,17 +68,37 @@ return function()
 
   mason_lspconfig.setup {
     ensure_installed = vim.tbl_keys(servers),
+    -- mason-lspconfig removed `setup_handlers` and can auto-enable servers.
+    -- We handle `lspconfig.setup()` ourselves below to keep all config local.
+    automatic_enable = false,
     automatic_installation = true,
   }
 
-  mason_lspconfig.setup_handlers {
-    function(server_name)
-      require('lspconfig')[server_name].setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = servers[server_name],
-        filetypes = (servers[server_name] or {}).filetypes,
-      }
-    end,
-  }
+  local lspconfigs = require 'lspconfig.configs'
+
+  for server_name, server_config in pairs(servers) do
+    -- Newer nvim-lspconfig versions deprecate the `require('lspconfig')[name]` access
+    -- pattern on Nvim >= 0.11. Load server configs explicitly to avoid that path.
+    local ok, config_def = pcall(require, 'lspconfig.configs.' .. server_name)
+    if ok then
+      -- Mirror lspconfig's old `__index` behavior: requiring a config module does
+      -- not register it, so we assign it into `lspconfig.configs` to build the
+      -- actual server object (with `.setup`, manager, etc.).
+      lspconfigs[server_name] = config_def
+    end
+    local server = lspconfigs[server_name]
+    if not server then
+      vim.notify(string.format('[lspconfig] config "%s" not found', server_name), vim.log.levels.WARN)
+      goto continue
+    end
+
+    server.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = server_config,
+      filetypes = (server_config or {}).filetypes,
+    }
+
+    ::continue::
+  end
 end
